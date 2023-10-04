@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
+router.post('/categories', async (req, res) => {
+  try {
+    const newCategory = await Category.create(req.body);
+    res.status(201).json(newCategory);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 router.get('/', async (req, res) => {
   try {
     const categories = await Category.findAll({
