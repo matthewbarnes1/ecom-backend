@@ -36,4 +36,13 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const newProduct = await Product.create(req.body);
+    res.status(201).json(newProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
