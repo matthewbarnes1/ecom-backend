@@ -45,4 +45,24 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedProduct = await Product.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (updatedProduct[0] === 0) {
+      res.status(404).json({ message: 'No product found with this id!' });
+      return;
+    }
+
+    res.json({ message: 'Product updated successfully!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;
