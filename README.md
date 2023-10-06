@@ -30,7 +30,7 @@
 - For someone who wants to tailor a pre-made API to their needs, this is also, perfect!
 
 ## Video Walkthrough 
-
+See a walkthrough of the application [here](https://youtu.be/Wyb4aSKW6OM)
 
 ## License
 This API application uses the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
